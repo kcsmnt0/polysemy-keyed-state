@@ -61,3 +61,6 @@ tests:
     dependencies:
       - hspec >= 2.0 && < 3.0
       - QuickCheck >= 2.12 && < 2.15
+
+    default-extensions:
+      - StandaloneDeriving
