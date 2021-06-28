@@ -1,0 +1,63 @@
+name: polysemy-keyed-state
+version: 0.1
+category: "BSD3, Library"
+synopsis: Polysemy effect for a set of stateful values indexed by a type of keys
+maintainer: Katie Casamento <kcsmnt0@gmail.com>
+github: kcsmnt0/polysemy-keyed-state
+license-file: LICENSE
+
+library:
+  source-dirs:
+    - src
+  exposed-modules:
+    - Polysemy.State.Keyed
+    - Polysemy.State.Keyed.Law
+
+dependencies:
+  - base >= 4.9 && < 5
+  - constraints >= 0.10 && < 0.14
+  - constraints-extras >= 0.3 && < 0.4
+  - polysemy >= 1.3 && < 1.6
+  - polysemy-plugin >= 0.2.5 && < 0.4
+  - some >= 1.0 && < 1.1
+  - StateVar >= 1.2 && < 1.3
+  - trivial-constraint >= 0.3 && < 0.8
+
+ghc-options:
+  - -fplugin=Polysemy.Plugin
+  - -fdefer-typed-holes
+  - -Wall
+  - -Wincomplete-patterns
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wredundant-constraints
+  - -Wpartial-fields
+
+default-extensions:
+  - AllowAmbiguousTypes
+  - ConstraintKinds
+  - DataKinds
+  - FlexibleContexts
+  - FlexibleInstances
+  - GADTs
+  - LambdaCase
+  - MultiParamTypeClasses
+  - QuantifiedConstraints
+  - RankNTypes
+  - ScopedTypeVariables
+  - TemplateHaskell
+  - TupleSections
+  - TypeApplications
+  - TypeFamilies
+  - TypeOperators
+  - UndecidableInstances
+
+tests:
+  spec:
+    main: "Spec.hs"
+    ghc-options: "-threaded -O0"
+    source-dirs: [src, test]
+
+    dependencies:
+      - hspec >= 2.0 && < 3.0
+      - QuickCheck >= 2.12 && < 2.15
