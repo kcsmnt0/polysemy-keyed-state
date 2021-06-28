@@ -1,5 +1,7 @@
 # polysemy-keyed-state
 
+![build/test](https://github.com/kcsmnt0/polysemy-keyed-state/actions/workflows/haskell.yml/badge.svg)
+
 The `KeyedState k` effect provides access to a set of stateful values indexed by some key type `k`, where a key of type `k a` can be used to access a stateful value of type `a`.
 
 In the most direct use case, the `KeyedState` effect can be used as an interface to low-level reference types like `IORef` and `STRef`: for example, `getAt` can be used with the type `Member (KeyedState IORef) r => IORef a -> Sem r a`.
