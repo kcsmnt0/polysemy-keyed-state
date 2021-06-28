@@ -85,6 +85,7 @@ test-suite spec
       TypeFamilies
       TypeOperators
       UndecidableInstances
+      StandaloneDeriving
   ghc-options: -fplugin=Polysemy.Plugin -fdefer-typed-holes -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields -threaded -O0
   build-depends:
       QuickCheck >=2.12 && <2.15
