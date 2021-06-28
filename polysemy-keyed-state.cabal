@@ -28,6 +28,11 @@ library
   hs-source-dirs:
       src
   default-extensions:
+      AllowAmbiguousTypes
+      ConstraintKinds
+      DataKinds
+      FlexibleContexts
+      FlexibleInstances
       GADTs
       LambdaCase
       MultiParamTypeClasses
@@ -38,6 +43,8 @@ library
       TupleSections
       TypeApplications
       TypeFamilies
+      TypeOperators
+      UndecidableInstances
   ghc-options: -fplugin=Polysemy.Plugin -fdefer-typed-holes -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields
   build-depends:
       StateVar ==1.2.*
@@ -61,6 +68,11 @@ test-suite spec
       src
       test
   default-extensions:
+      AllowAmbiguousTypes
+      ConstraintKinds
+      DataKinds
+      FlexibleContexts
+      FlexibleInstances
       GADTs
       LambdaCase
       MultiParamTypeClasses
@@ -71,6 +83,8 @@ test-suite spec
       TupleSections
       TypeApplications
       TypeFamilies
+      TypeOperators
+      UndecidableInstances
   ghc-options: -fplugin=Polysemy.Plugin -fdefer-typed-holes -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields -threaded -O0
   build-depends:
       QuickCheck >=2.12 && <2.15
