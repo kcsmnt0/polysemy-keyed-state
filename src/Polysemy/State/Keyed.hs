@@ -9,7 +9,7 @@ The @KeyedState k@ effect provides access to a set of stateful values indexed by
 
 In the most direct use case, the @KeyedState@ effect can be used as an interface to low-level reference types like [@IORef@](https://hackage.haskell.org/package/base/docs/Data-IORef.html#t:IORef) and [@STRef@](https://hackage.haskell.org/package/base/docs/Data-STRef.html#t:STRef): for example, @getAt@ can be used with the type @Member (KeyedState IORef) r => IORef a -> Sem r a@.
 
-At a higher level, key types defined as GADTs can be used with @KeyedState@ to represent sets of stateful variables in a single effect. For example, with the GADT definition of @A@ below, the effect @KeyedState K@ provides access to an @Int@ value with key @X@ and a @Bool@ value with key @Y@.
+At a higher level, key types defined as GADTs can be used with @KeyedState@ to represent sets of stateful variables in a single effect. For example, with the GADT definition of @K@ below, the effect @KeyedState K@ provides access to an @Int@ value with key @X@ and a @Bool@ value with key @Y@.
 
 @
 data K a where
