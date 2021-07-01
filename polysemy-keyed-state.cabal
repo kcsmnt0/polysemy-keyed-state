@@ -7,6 +7,7 @@ cabal-version: 1.12
 name:           polysemy-keyed-state
 version:        0.1
 synopsis:       Polysemy effect for a set of stateful values indexed by a type of keys
+description:    The @KeyedState k@ effect provides access to a set of stateful values indexed by some key type @k :: Type -> Type@, where a key of type @k a@ can be used to access a stateful value of type @a@.
 category:       BSD3, Library
 homepage:       https://github.com/kcsmnt0/polysemy-keyed-state#readme
 bug-reports:    https://github.com/kcsmnt0/polysemy-keyed-state/issues
@@ -85,7 +86,7 @@ test-suite spec
       TypeOperators
       UndecidableInstances
       StandaloneDeriving
-  ghc-options: -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields -threaded -O0
+  ghc-options: -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields -threaded
   build-depends:
       QuickCheck >=2.11.3 && <2.15
     , StateVar ==1.2.*

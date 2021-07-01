@@ -6,6 +6,9 @@ maintainer: Katie Casamento <kcsmnt0@gmail.com>
 github: kcsmnt0/polysemy-keyed-state
 license-file: LICENSE
 
+description: >
+  The @KeyedState k@ effect provides access to a set of stateful values indexed by some key type @k :: Type -> Type@, where a key of type @k a@ can be used to access a stateful value of type @a@.
+
 library:
   source-dirs:
     - src
@@ -52,7 +55,7 @@ default-extensions:
 tests:
   spec:
     main: "Spec.hs"
-    ghc-options: "-threaded -O0"
+    ghc-options: "-threaded"
     source-dirs: [src, test]
 
     dependencies:
