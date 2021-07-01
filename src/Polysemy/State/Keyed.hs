@@ -21,6 +21,7 @@ By mapping high-level keys to low-level references, the @KeyedState@ effect can 
 
 Some of the interpreters for @KeyedState@ require instances of [@Has@](https://hackage.haskell.org/package/constraints-extras/docs/Data-Constraint-Extras.html#t:Has) for certain typeclasses, which can be generated for most GADT key types with [@deriveArgDict@](https://hackage.haskell.org/package/constraints-extras/docs/Data-Constraint-Extras-TH.html#v:deriveArgDict).
 -}
+
 module Polysemy.State.Keyed
   ( KeyedState(..)
   -- * Operations
@@ -186,7 +187,7 @@ runKeyedStateVarsIO ::
   InterpreterFor (KeyedState k) r
 runKeyedStateVarsIO h =
   runInputConst () .
-  runKeyedStateVarsOfIO (\k _ -> h k) .
+  runKeyedStateVarsOfIO @() (\k _ -> h k) .
   raiseUnder
 
 {-|

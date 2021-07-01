@@ -45,15 +45,14 @@ library
       TypeFamilies
       TypeOperators
       UndecidableInstances
-  ghc-options: -fplugin=Polysemy.Plugin -fdefer-typed-holes -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields
+  ghc-options: -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields
   build-depends:
       StateVar ==1.2.*
-    , base >=4.9 && <5
-    , constraints >=0.10 && <0.14
-    , constraints-extras ==0.3.*
+    , base >=4.12 && <4.15
+    , constraints >=0.11 && <0.14
+    , constraints-extras >=0.3.0.2 && <0.4
     , polysemy >=1.3 && <1.6
-    , polysemy-plugin >=0.2.5 && <0.4
-    , some ==1.0.*
+    , some >=1.0.1 && <1.1
     , trivial-constraint >=0.3 && <0.8
   default-language: Haskell2010
 
@@ -86,16 +85,15 @@ test-suite spec
       TypeOperators
       UndecidableInstances
       StandaloneDeriving
-  ghc-options: -fplugin=Polysemy.Plugin -fdefer-typed-holes -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields -threaded -O0
+  ghc-options: -Wall -Wincomplete-patterns -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wpartial-fields -threaded -O0
   build-depends:
-      QuickCheck >=2.12 && <2.15
+      QuickCheck >=2.11.3 && <2.15
     , StateVar ==1.2.*
-    , base >=4.9 && <5
-    , constraints >=0.10 && <0.14
-    , constraints-extras ==0.3.*
-    , hspec >=2.0 && <3.0
+    , base >=4.12 && <4.15
+    , constraints >=0.11 && <0.14
+    , constraints-extras >=0.3.0.2 && <0.4
+    , hspec >=2.4.7 && <2.9
     , polysemy >=1.3 && <1.6
-    , polysemy-plugin >=0.2.5 && <0.4
-    , some ==1.0.*
+    , some >=1.0.1 && <1.1
     , trivial-constraint >=0.3 && <0.8
   default-language: Haskell2010

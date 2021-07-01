@@ -51,12 +51,15 @@ spec = do
     prop "obeys the KeyedState laws" $
       \(a :: Int) (b :: Int) (c :: Double) (d :: Bool) -> do
         prop_lawfulKeyedState @_ @'[Embed IO] $
-          evalState d .
-          evalState c .
-          evalState b .
-          evalState a .
-          runKeyedStates (\case A -> Here; B -> There Here; C -> There $ There Here; D -> There $ There $ There Here) .
-          subsume_
+            evalState d
+          . evalState c
+          . evalState b
+          . evalState a
+          . runKeyedStates (\case A -> Here; B -> There Here; C -> There $ There Here; D -> There $ There $ There Here)
+          . raiseUnder
+          . raiseUnder
+          . raiseUnder
+          . raiseUnder
 
   describe "runKeyedStateStore" $ do
     prop "obeys the KeyedState laws" $
