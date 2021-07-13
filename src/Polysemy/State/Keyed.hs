@@ -5,6 +5,7 @@ module Polysemy.State.Keyed
   , putAt
   , modifyAt
   , rename
+  , zoomAt
   -- * @State@ interpreters
   , runKeyedStates
   , KeyedStore(..)
@@ -65,6 +66,16 @@ rename h =
   transform $ \case
     GetAt k -> GetAt $ h k
     PutAt k x -> PutAt (h k) x
+
+-- |Interpret a @State@ effect as a single variable in a @KeyedState@ effect.
+zoomAt ::
+  forall k a r.
+  Member (KeyedState k) r =>
+  k a -> InterpreterFor (State a) r
+zoomAt k =
+  interpret $ \case
+    Get -> getAt k
+    Put x -> putAt k x
 
 {-|
 Distribute a @KeyedState@ effect across multiple @State@ effects by mapping each key to an effect.
