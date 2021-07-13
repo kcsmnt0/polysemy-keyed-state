@@ -1,5 +1,5 @@
 name: polysemy-keyed-state
-version: 0.1
+version: 0.1.1
 category: "BSD3, Library"
 synopsis: Effect for a set of stateful values indexed by a type of keys
 maintainer: Katie Casamento <kcsmnt0@gmail.com>

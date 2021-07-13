@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           polysemy-keyed-state
-version:        0.1
+version:        0.1.1
 synopsis:       Effect for a set of stateful values indexed by a type of keys
 description:    The @KeyedState k@ effect provides access to a set of stateful values indexed by some key type @k :: Type -> Type@, where a key of type @k a@ can be used to access a stateful value of type @a@.
 category:       BSD3, Library
