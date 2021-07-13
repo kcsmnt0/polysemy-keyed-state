@@ -1,13 +1,23 @@
 name: polysemy-keyed-state
 version: 0.1
 category: "BSD3, Library"
-synopsis: Polysemy effect for a set of stateful values indexed by a type of keys
+synopsis: Effect for a set of stateful values indexed by a type of keys
 maintainer: Katie Casamento <kcsmnt0@gmail.com>
 github: kcsmnt0/polysemy-keyed-state
 license-file: LICENSE
+stability: experimental
 
 description: >
   The @KeyedState k@ effect provides access to a set of stateful values indexed by some key type @k :: Type -> Type@, where a key of type @k a@ can be used to access a stateful value of type @a@.
+
+extra-source-files:
+  - README.md
+  - CHANGELOG.md
+
+tested-with:
+  - GHC == 8.6.5
+  - GHC == 8.8.4
+  - GHC == 8.10.5
 
 library:
   source-dirs:
